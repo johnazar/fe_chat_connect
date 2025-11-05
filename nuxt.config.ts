@@ -15,8 +15,11 @@ export default defineNuxtConfig({
     },
     vite: {
         server: {
+            strictPort: true,
             hmr: {
-                clientPort: 5000,
+                protocol: 'wss',
+                clientPort: 443,
+                port: 5000,
             },
         },
     },
