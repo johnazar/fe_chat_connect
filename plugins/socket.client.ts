@@ -8,8 +8,7 @@ export default defineNuxtPlugin(() => {
 
     // If not provided, default to same origin with port 3001
     if (!socketServerUrl) {
-        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-        socketServerUrl = `${protocol}//${window.location.hostname}:3001`;
+        socketServerUrl = window.location.origin;
     }
 
     // Initialize the Socket.IO client

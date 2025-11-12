@@ -4,16 +4,18 @@
             <ui1-common-lang-switcher />
             <ui1-common-color-switcher />
         </div>
-        <div class="flex justify-between p-4">
-            <div>Logo</div>
+        <div class="flex justify-between bg-slate-300 p-2">
+            <div class="flex items-center">
+                <img src="/logo.svg" alt="App logo" class="h-8 w-auto" />
+            </div>
 
-            <div class="flex gap-4">
+            <div class="flex items-center gap-4">
                 <nuxt-link to="/">Home</nuxt-link>
                 <nuxt-link to="/chats">Chat</nuxt-link>
                 <nuxt-link to="/test">Test</nuxt-link>
             </div>
 
-            <div v-if="isConnected">
+            <div v-if="isConnected" class="flex items-center gap-4">
                 <div class="w-28 overflow-hidden text-ellipsis">
                     {{ address }}
                 </div>
