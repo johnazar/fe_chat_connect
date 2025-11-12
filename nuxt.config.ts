@@ -9,6 +9,20 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
+    devServer: {
+        host: '0.0.0.0',
+        port: 5000,
+    },
+    vite: {
+        server: {
+            strictPort: true,
+            hmr: {
+                protocol: 'wss',
+                clientPort: 443,
+                port: 5000,
+            },
+        },
+    },
     modules: [
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
