@@ -1,26 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    compatibilityDate: '2024-11-01',
+    compatibilityDate: '2025-11-05',
     devtools: { enabled: true },
     css: ['~/assets/css/main.css'],
     postcss: {
         plugins: {
             tailwindcss: {},
             autoprefixer: {},
-        },
-    },
-    devServer: {
-        host: '0.0.0.0',
-        port: 5000,
-    },
-    vite: {
-        server: {
-            strictPort: true,
-            hmr: {
-                protocol: 'wss',
-                clientPort: 443,
-                port: 5000,
-            },
         },
     },
     modules: [
@@ -32,6 +18,11 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
     ],
+    runtimeConfig: {
+        public: {
+            signalingWsUrl: '',
+        },
+    },
     colorMode: {
         classSuffix: '',
     },
@@ -46,6 +37,3 @@ export default defineNuxtConfig({
         ],
     },
 });
-
-// public runtime config can be set via env var NUXT_PUBLIC_SIGNALING_WS
-// e.g. NUXT_PUBLIC_SIGNALING_WS=ws://192.168.1.10:3001
